@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BlogAppRoutingModule } from './blog-app-routing.module';
 import { BlogAppComponent } from './blog-app.component';
+import { BlogService } from './services/blog.service';
 import { HttpService } from '../services/http/http.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     HttpService,
+    BlogService
   ]
 })
 export class BlogAppModule { }
