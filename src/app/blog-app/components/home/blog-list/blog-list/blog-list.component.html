@@ -1,0 +1,9 @@
+<p>blog-list works!</p>
+
+<button (click)="getAllBlogs()">
+    Get all blogs
+</button>
+
+<pre>
+    {{allBlogs$ | async | json}}
+</pre>
