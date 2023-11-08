@@ -1,0 +1,29 @@
+.blog-card {
+    max-width: 40vw;
+    margin: 10px;
+    box-shadow: 4px 4px lightgray;
+    border: 3px solid black;
+}
+
+.blog-card-info {
+    text-align: center;
+}
+
+.blog-card-creation-info {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.blog-card-footer {
+    list-style-type: none;
+}
+
+.blog-card-tag {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.blog-card-footer-comment-icon {
+    
+}
