@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Blog } from '../blog-list/blog-list/blog-list.component';
 
 @Component({
   selector: 'app-blog-card',
@@ -6,6 +7,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./blog-card.component.scss']
 })
 export class BlogCardComponent implements OnInit, OnDestroy {
+
+  @Input() blog: Blog | null = null;
 
   constructor() {
     

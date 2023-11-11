@@ -1,8 +1,10 @@
-<p>blog-list works!</p>
-
-<button (click)="getAllBlogs()">
-    Get all blogs
+<button (click)="getBlogsForUser()">
+    Get Blogs For User  
 </button>
+
+<div *ngFor="let blog of allBlogs$ | async">
+    <app-blog-card [blog]="blog"></app-blog-card>
+</div>
 
 <pre>
     {{allBlogs$ | async | json}}

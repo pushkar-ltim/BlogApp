@@ -9,20 +9,32 @@ import { BlogService } from 'src/app/blog-app/services/blog.service';
 })
 export class BlogListComponent implements OnInit {
 
-  allBlogs$ = new Observable()
+  allBlogs$ = new Observable<Blog[]>();
 
   constructor(
     private bs: BlogService
   ) {}
 
   ngOnInit(): void {
-    //this.getAllBlogs();
+    this.getBlogsForUser();
   }
 
   getAllBlogs() {
     this.allBlogs$ = this.bs.getAllBlogs() as any;
   }
 
+  getBlogsForUser() {
+    this.allBlogs$ = this.bs.getBlogsForUser(1) as any;
+  }
+
   getCommentsForBlog(blogID: number) {}
 
+}
+
+export interface Blog {
+  blogId: number,
+  createdById: number,
+  title: string,
+  body: string,
+  createdOn: Date
 }
