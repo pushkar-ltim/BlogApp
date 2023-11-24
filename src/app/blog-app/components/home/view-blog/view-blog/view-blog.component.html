@@ -1,0 +1,39 @@
+
+<hr>
+<div class="flex flex-row-reverse">
+    <button type="button" class="btn add-blog-button" (click)="routeToBlogList()">
+        <
+    </button>
+</div>
+
+<hr>
+<article class="card blog-card">
+    <div class="card-body">
+        <header class="d-flex justify-content-between blog-card-info">
+            <h5 class="card-title">{{blog?.title}}</h5>
+            <aside class="d-flex">
+                <p class="blog-card-creation-info">{{blog?.createdById}}, {{blog?.createdOn | date}}</p>
+            </aside>
+        </header>
+        <div class="blog-content d-flex-vertical justify-content-between">
+            <p class="card-text" [innerHTML]="blog?.body"></p>
+            <hr>
+            <div class="blog-card-footer">
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Add a comment">
+                  </div>
+                <hr>
+                <h6>Comments</h6>
+                <ol class="card-text" >
+                    <ng-container *ngFor="let comment of comments">
+                        <li class="blog-comment">
+                            <pre>
+                                {{comment.commentUserName | json}} {{comment.commentBody | json}} {{comment.commentedOnDate | date}}
+                            </pre>
+                        </li>
+                    </ng-container>
+                </ol>
+            </div>
+        </div>
+    </div>
+</article>

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BlogAppRoutingModule } from './blog-app-routing.module';
 import { BlogAppComponent } from './blog-app.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { BlogListComponent } from './components/home/blog-list/blog-list/blog-list.component';
@@ -13,18 +12,23 @@ import { BlogService } from './services/blog.service';
 import { HttpService } from '../services/http/http.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { RecentlyAddedComponent } from './components/home/recently-added/recently-added.component';
+import { YourBlogsComponent } from './components/home/your-blogs/your-blogs.component';
+import { ViewBlogComponent } from './components/home/view-blog/view-blog/view-blog.component';
 
 
 
 @NgModule({
   declarations: [
     BlogAppComponent,
-    SidebarComponent,
     NavbarComponent,
     HomeComponent,
     BlogListComponent,
     BlogCardComponent,
-    CreateBlogComponent
+    CreateBlogComponent,
+    RecentlyAddedComponent,
+    YourBlogsComponent,
+    ViewBlogComponent
   ],
   imports: [
     CommonModule,

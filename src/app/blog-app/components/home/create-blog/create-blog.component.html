@@ -1,1 +1,14 @@
-<p>create-blog works!</p>
+<hr>
+<div class="flex flex-row-reverse">
+    <button type="button" class="btn add-blog-button" (click)="routeToBlogList()">
+        <
+    </button>
+</div>
+
+<hr>
+
+<form [formGroup]="form">
+    <input type="text" formControlName="title">
+    <textarea name="formBody" id="formBody" cols="30" rows="10" formControlName="body"></textarea>
+    <button (click)="onSubmit()">Publish</button>
+</form>

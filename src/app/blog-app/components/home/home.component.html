@@ -1,8 +1,18 @@
-<div class="home">
-    <ng-content></ng-content>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <app-your-blogs></app-your-blogs>
+        </div>
+        <div class="col-6">
+            <ng-content></ng-content>
+        </div>
+        <div class="col-3">
+            <app-recently-added></app-recently-added>
+        </div>
+    </div>
 </div>
 
-<app-blog-card></app-blog-card>
+<!-- <app-create-blog></app-create-blog> -->
 
 <!-- <app-blog-list></app-blog-list> -->
 

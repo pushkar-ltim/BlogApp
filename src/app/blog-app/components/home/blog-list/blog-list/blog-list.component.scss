@@ -1,0 +1,15 @@
+.add-blog-button {
+    background:white;
+    color: teal;
+    font-weight: bold;
+    border: 1px solid teal;
+    border-radius: 10px;
+    box-shadow: 3px 3px lightblue;
+    transition: transform .1s;
+}
+
+.add-blog-button:active {
+    color: teal;
+    box-shadow: none;
+    transform: translate(3px, 3px)
+}  

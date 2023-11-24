@@ -1,5 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Blog } from '../blog-list/blog-list/blog-list.component';
+import { Route, Router } from '@angular/router';
+import { BlogService } from 'src/app/blog-app/services/blog.service';
 
 @Component({
   selector: 'app-blog-card',
@@ -10,7 +12,10 @@ export class BlogCardComponent implements OnInit, OnDestroy {
 
   @Input() blog: Blog | null = null;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private bs: BlogService
+  ) {
     
   }
 
@@ -18,6 +23,10 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+  }
+
+  routeToViewBlog(id: any) {
+    this.router.navigate(['blog-app/view-blog/' + id])
   }
 
 }

@@ -15,13 +15,13 @@
 <article class="card blog-card">
     <div class="card-body">
         <header class="d-flex justify-content-between blog-card-info">
-            <h5 class="card-title">{{blog?.title}}</h5>
+            <h5 class="card-title" (click)="routeToViewBlog(blog?.blogId)">{{blog?.title}}</h5>
             <aside class="d-flex">
                 <p class="blog-card-creation-info">{{blog?.createdById}}, {{blog?.createdOn | date}}</p>
             </aside>
         </header>
         <div class="blog-content d-flex-vertical justify-content-between">
-            <p class="card-text" [innerHTML]="blog?.body">
+            <p class="card-text" [innerHTML]="blog?.body?.slice(0, 500) + '...'">
             </p>
             <div class="blog-card-footer">
                 <small

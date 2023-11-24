@@ -1,0 +1,32 @@
+
+  <section>
+    <article class="blog-panel">
+        <header class="panel-header flex flex-space-between">
+            <h5 class="panel-header-text">Blogs Published By You</h5>
+            <small class="link">View All</small>
+        </header>
+
+
+        <ol class="list-group list-group-numbered" style="margin-top: 10px;">
+          <ng-container *ngFor="let blog of recentBlogsByUser$ | async">
+
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="flex flex-space-between">
+                  <h6>{{blog.title}}</h6>
+                  <aside>
+                    <small>
+                      {{blog.createdOn | date}}
+                    </small>
+                  </aside>
+                </div>
+                {{blog.body.slice(0, 80) + '...'}}
+              </div>
+            </li>
+
+          </ng-container>
+
+        </ol>
+
+    </article>
+</section>

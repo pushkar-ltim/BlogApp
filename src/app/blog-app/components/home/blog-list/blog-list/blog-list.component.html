@@ -1,11 +1,19 @@
-<button (click)="getBlogsForUser()">
+<!-- <button (click)="getBlogsForUser()">
     Get Blogs For User  
-</button>
+</button> -->
+<hr>
+<div class="flex flex-row-reverse">
+    <button type="button" class="btn add-blog-button" (click)="routeToCreateBlog()">
+        <i class="bi bi-plus-circle"></i>
+        Publish A Blog
+    </button>
+</div>
 
+<hr>
 <div *ngFor="let blog of allBlogs$ | async">
     <app-blog-card [blog]="blog"></app-blog-card>
 </div>
-
+<!-- 
 <pre>
     {{allBlogs$ | async | json}}
-</pre>
+</pre> -->
