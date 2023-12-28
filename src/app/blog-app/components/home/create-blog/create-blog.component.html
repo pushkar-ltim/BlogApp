@@ -6,9 +6,21 @@
 </div>
 
 <hr>
-
+<!-- 
 <form [formGroup]="form">
     <input type="text" formControlName="title">
     <textarea name="formBody" id="formBody" cols="30" rows="10" formControlName="body"></textarea>
     <button (click)="onSubmit()">Publish</button>
-</form>
+</form> -->
+
+<form [formGroup]="form">
+    <div class="mb-3">
+      <label for="blogTitle" class="form-label">Blog Title</label>
+      <input type="text" formControlName="title" class="form-control" id="blogTitle" aria-describedby="blogTitle">
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Blog Content</label>
+      <textarea  class="form-control" name="formBody" id="formBody" cols="30" rows="10" formControlName="body"></textarea>
+    </div>
+    <button (click)="onSubmit()" class="btn btn-primary">Publish</button>
+  </form>

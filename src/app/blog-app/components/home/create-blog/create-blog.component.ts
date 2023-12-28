@@ -41,10 +41,16 @@ export class CreateBlogComponent implements OnInit, OnDestroy {
   onSubmit() {
     let blog: ReducedBlog =  {
       title: this.form.value.title || '',
-      createdByID: this.form.value.createdByID || 0,
+      createdByID: this.form.value.createdByID || 1,
       body: this.form.value.body || '',
     };
-    this.bs.postBlog(blog)?.subscribe();
+    this.bs.postBlog(blog)?.subscribe(
+      (blog: Blog) => {
+        let id = blog.blogId;
+        this.router.navigate([`blog-app/view-blog/${id}`]);
+        return;
+      }
+    );
   }
  
 }

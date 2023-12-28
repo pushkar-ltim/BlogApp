@@ -19,15 +19,19 @@
             <p class="card-text" [innerHTML]="blog?.body"></p>
             <hr>
             <div class="blog-card-footer">
-                <div class="mb-3">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Add a comment">
-                  </div>
+                <form [formGroup]="form">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" id="commentBody" placeholder="Add a comment"  formControlName="body">
+                        <button class="btn btn-outline-primary" type="button" id="commentSubmitBtn" (click)="onSubmit()">Comment</button>
+                    </div>
+                </form>
                 <hr>
                 <h6>Comments</h6>
                 <ol class="card-text" >
                     <ng-container *ngFor="let comment of comments">
                         <li class="blog-comment">
                             <pre>
+                                {{comment | json}}
                                 {{comment.commentUserName | json}} {{comment.commentBody | json}} {{comment.commentedOnDate | date}}
                             </pre>
                         </li>

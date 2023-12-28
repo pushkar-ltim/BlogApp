@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from 'src/app/blog-app/services/blog.service';
 import { Blog } from '../../blog-list/blog-list/blog-list.component';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-view-blog',
@@ -13,6 +14,14 @@ export class ViewBlogComponent implements OnInit{
   blog: Blog | any = null;
   comments: any;
   blog$: any;
+
+  form = new FormGroup({
+    body: new FormControl(),
+    // commentID: new FormControl(),
+    blogID: new FormControl(),
+    // commentedOnDate: new FormControl(),
+    // commentedByUser: new FormControl()
+  })
 
   constructor(
     private bs: BlogService,
@@ -33,7 +42,19 @@ export class ViewBlogComponent implements OnInit{
       (data : any) => {
         this.comments = data
       }
-    )
+    );
+  }
+
+  onSubmit() {
+
+    let blogID = this.route.snapshot.paramMap.get('id');
+    debugger;
+    let comment =  {
+      blogID: this.form.value.blogID || blogID,
+      body: this.form.value.body || '',
+    };
+    this.bs.postComment(comment)?.subscribe();
+    this.router.navigate([`blog-app/view-blog/${blogID}`])
   }
 
   routeToBlogList() {

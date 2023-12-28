@@ -41,6 +41,11 @@ export class BlogService {
     return this.http.request(HttpVerbs.GET, url);
   }
 
+  postComment(comment: any) {
+    let url = this.commentControllerUrl;
+    return this.http.request(HttpVerbs.POST, url, comment)
+  }
+
   getRecentBlogsByUser(userID: number) {
     let url = this.controllerUrl + 'getRecentBlogsByUser/' + userID;
     return this.http.request(HttpVerbs.GET, url) as any;
@@ -48,7 +53,7 @@ export class BlogService {
 
   postBlog(blog: ReducedBlog) {
     let url = this.controllerUrl;
-    return this.http.request(HttpVerbs.POST, url, blog);
+    return this.http.request(HttpVerbs.POST, url, blog) as any;
   }
 
   updateBlog() {
