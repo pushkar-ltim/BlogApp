@@ -47,3 +47,31 @@
     color: teal;
     cursor: pointer;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-header {
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.navbar-profile-icon {
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.register-form {
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+

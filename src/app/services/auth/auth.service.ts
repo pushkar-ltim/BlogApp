@@ -1,9 +1,30 @@
 import { Injectable } from '@angular/core';
+import { HttpService, HttpVerbs } from '../http/http.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
-  constructor() { }
+  UserControllerUrl = 'User'
+
+  constructor(
+    private http: HttpService
+  ) { }
+
+  login(
+    userName: string,
+    password: string
+  ) {
+    let url = this.UserControllerUrl + '/authenticate';
+    let authReqBody: AuthReqBody = {
+      userName : userName,
+      password: password
+    }
+    return this.http.request(HttpVerbs.POST, url, authReqBody)
+  }
 }
+
+interface AuthReqBody {
+  userName: string,
+  password: string
+}
+

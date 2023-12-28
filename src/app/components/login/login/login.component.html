@@ -1,1 +1,29 @@
-<p>login works!</p>
+<nav class="navbar">
+    <header class="navbar-header">
+        Blogs
+    </header>
+    <button class="btn btn-outline-primary" (click)="routeToRegister()">Register</button>
+
+</nav>
+
+<div class="container text-center">
+    <div class="row align-items-center">
+        <div class="col">
+        </div>
+        <div class="col">
+            <div class="register-form row mt-5">
+                <h3 class="h3">
+                    Login
+                </h3>
+                <form [formGroup]="form">
+                    <input type="text" class="form-control m-1" name="username" id="username" placeholder="username" formControlName="username">
+                    <input type="password" class="form-control m-1" name="password" id="password" formControlName="password"
+                        placeholder="password">
+                    <button type="button" (click)="onSubmit()" class="btn btn-primary m1">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
