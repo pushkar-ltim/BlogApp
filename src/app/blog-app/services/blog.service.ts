@@ -17,7 +17,7 @@ export class BlogService {
   ) { }
 
   getAllBlogs() {
-    let url = this.controllerUrl;
+    let url = this.controllerUrl + 'GetAllBlogs';
     return this.http.request(HttpVerbs.GET, url);
   }
 
@@ -25,6 +25,7 @@ export class BlogService {
     let url = this.controllerUrl + 'GetBlogsByUser/' + id;
     return this.http.request(HttpVerbs.GET, url);
   }
+
 
   getBlogWithComments(id: number) {
     let url = this.controllerUrl + 'GetBlogWithComments/' + id;

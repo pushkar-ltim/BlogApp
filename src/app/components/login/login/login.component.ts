@@ -41,8 +41,27 @@ export class LoginComponent {
     //     );
     // }
 
-    this.authService.login(username, password)?.subscribe(res => {
+    this.authService.login(username, password)?.subscribe((
+      res : any
+    ) => {
+      
       console.log(res, 'login result');
+
+      this.authService.setSession(res.jwt);
+
+      this.authService.currentUser$.next(
+        {
+          userId: "",
+          userName: username,
+          email: "",
+          phone: "",
+          nameOfUser: ""
+        }
+      );
+
+      this.authService.setUserDetails(username);
+
+      this.router.navigate(['blog-app']);
       
     })
     

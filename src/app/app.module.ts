@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { HttpService } from './services/http/http.service';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BlogHttpInterceptor } from './services/http/blog-http.interceptor';
 
 
 @NgModule({
@@ -25,7 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     HttpService,
-    AuthService
+    AuthService,
+    { 
+      provide: HTTP_INTERCEPTORS, useClass: BlogHttpInterceptor, multi:true
+    },
   ],
   bootstrap: [AppComponent]
 })

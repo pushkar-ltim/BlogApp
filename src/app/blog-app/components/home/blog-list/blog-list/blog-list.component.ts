@@ -18,16 +18,16 @@ export class BlogListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getBlogsForUser();
+    this.getAllBlogs();
   }
 
   getAllBlogs() {
     this.allBlogs$ = this.bs.getAllBlogs() as any;
   }
 
-  getBlogsForUser() {
-    this.allBlogs$ = this.bs.getBlogsByUser(1) as any;
-  }
+  // getBlogsForUser() {
+  //   this.allBlogs$ = this.bs.getBlogsByUser(1) as any;
+  // }
 
   routeToCreateBlog() {
     this.router.navigate(['blog-app/create-blog']);

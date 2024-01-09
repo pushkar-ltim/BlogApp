@@ -33,8 +33,7 @@ export class HttpService {
     
     url = this.baseUrl + url;
 
-    console.log(url, 'this is the url');   
-    
+    console.log(url, 'this is the url');       
 
     switch (verb) {
 

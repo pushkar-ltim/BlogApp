@@ -1,7 +1,29 @@
 <nav class="navbar">
+
     <header class="navbar-header">
         Blogs
     </header>
-    <i class="bi bi-person-circle navbar-profile-icon"></i>
+
+    <ng-container *ngIf="isLoggedIn$ | async">
+
+        <div>
+
+            <button class="btn bi bi-person-circle navbar-profile-icon" (click)="routeToProfile()"></button>
+
+            <button class="btn btn-outline-primary" (click)="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="!(isLoggedIn$ | async)">
+
+        <button class="btn btn-outline-primary" (click)="routeToLogin()">
+            Login
+        </button>
+
+    </ng-container>
 
 </nav>

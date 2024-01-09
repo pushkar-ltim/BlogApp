@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl: 'https://localhost:44356/'
+    baseUrl: 'https://demoblogapp2.azurewebsites.net/'
 };
