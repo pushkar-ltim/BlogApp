@@ -15,14 +15,20 @@
                 <h3 class="h3">
                     Register
                 </h3>
-                <form>
+                <form [formGroup]="form">
                     <input class="form-control m-1" type="text" name="registerNameOfUser" id="registerNameOfUser"
-                        placeholder="name">
+                        placeholder="name" formControlName="nameOfUser">
                     <input class="form-control m-1" type="text" name="registerUsername" id="registerUsername"
-                        placeholder="username">
+                        placeholder="username" formControlName="userName">
+                    <input class="form-control m-1" type="text" name="registerEmail" id="registerEmail"
+                        placeholder="email" formControlName="email">
+                    <input class="form-control m-1" type="text" name="registerPhone" id="registerPhone"
+                        placeholder="phone" formControlName="phone">
                     <input class="form-control m-1" type="password" name="registerPassword" id="registerPassword"
-                        placeholder="password">
-                    <button (click)="onSubmit()" class="btn btn-primary m1">Register</button>
+                        placeholder="password" formControlName="password">
+                    <input class="form-control m-1" type="password" name="registerPasswordConfirmation" id="registerPasswordConfirmation"
+                        placeholder="passwordConfirmation" formControlName="passwordConfirmation">
+                    <button type="button" (click)="onSubmit()" class="btn btn-primary m1">Register</button>
                 </form>
             </div>
         </div>
